@@ -239,120 +239,107 @@
       </div>
     </section>
 
-    <!-- ============ SHOWCASE (Before/After with Real Images) ============ -->
+    <!-- ============ PORTFOLIO (Before/After Full-Width Cards) ============ -->
     <style>
-      #portfolio { background: #0d1117; color: #fff; padding: 80px 0; text-align: center; }
-      #portfolio .sc-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-      #portfolio .sc-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #00e5ff; margin-bottom: 12px; }
-      #portfolio .sc-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.15; color: #fff; margin-bottom: 16px; letter-spacing: -0.01em; }
-      #portfolio .sc-subtitle { font-size: 1.0625rem; color: #8b949e; max-width: 540px; margin: 0 auto 40px; line-height: 1.6; }
-      #portfolio .sc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-      @media (min-width: 768px) { #portfolio .sc-grid { grid-template-columns: repeat(2, 1fr); } }
-      #portfolio .sc-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; text-align: left; transition: border-color 0.18s ease, box-shadow 0.18s ease; display: flex; flex-direction: column; }
-      #portfolio .sc-card:hover { border-color: rgba(0,229,255,0.3); box-shadow: 0 8px 30px rgba(0,229,255,0.1); }
-      #portfolio .sc-compare { display: flex; align-items: stretch; height: 280px; }
-      #portfolio .sc-side { flex: 1; position: relative; overflow: hidden; min-width: 0; }
-      #portfolio .sc-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      #portfolio .sc-badge { position: absolute; top: 10px; z-index: 2; font-family: 'Inter', sans-serif; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 9999px; }
-      #portfolio .sc-badge-before { left: 10px; background: #ff4d4d; color: #fff; }
-      #portfolio .sc-badge-after { right: 10px; background: #00e5ff; color: #0d1117; }
-      #portfolio .sc-divider { display: flex; align-items: center; justify-content: center; width: 3px; flex-shrink: 0; background: #30363d; }
-      #portfolio .sc-divider svg { display: none; }
-      #portfolio .sc-info { padding: 16px 20px; }
-      #portfolio .sc-info h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 2px; }
-      #portfolio .sc-info-type { display: block; font-size: 0.75rem; color: #8b949e; margin-bottom: 8px; }
-      #portfolio .sc-info-result { font-size: 0.875rem; font-weight: 600; color: #00e5ff; margin: 0; }
-      @media (max-width: 767px) { #portfolio .sc-compare { height: 220px; } }
+      #portfolio { background: #0d1117; padding: 80px 24px; text-align: center; color: #fff; }
+      #portfolio .pf-header { max-width: 1100px; margin: 0 auto 40px; }
+      #portfolio .pf-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #00e5ff; margin-bottom: 12px; }
+      #portfolio .pf-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.15; color: #fff; margin-bottom: 16px; letter-spacing: -0.01em; }
+      #portfolio .pf-subtitle { font-size: 1.0625rem; color: #8b949e; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+      #portfolio .pf-grid { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+      #portfolio .pf-card { background: #161b22; border: 1px solid #30363d; border-radius: 16px; overflow: hidden; transition: border-color 0.18s ease; }
+      #portfolio .pf-card:hover { border-color: rgba(0,229,255,0.3); }
+      #portfolio .pf-images { display: flex; }
+      #portfolio .pf-img-wrap { position: relative; flex: 1; height: 340px; overflow: hidden; }
+      #portfolio .pf-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      #portfolio .pf-label-tag { position: absolute; top: 12px; padding: 4px 14px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 2; color: #fff; }
+      #portfolio .pf-before { left: 12px; background: #e53935; }
+      #portfolio .pf-after { right: 12px; background: #00e5ff; color: #0d1117; }
+      #portfolio .pf-info { text-align: center; padding: 20px; }
+      #portfolio .pf-info h3 { color: #fff; font-size: 20px; margin: 0 0 4px; }
+      #portfolio .pf-location { color: #8b949e; font-size: 14px; margin: 0 0 6px; }
+      #portfolio .pf-stat { color: #00e5ff; font-size: 15px; font-weight: 600; margin: 0; }
+      @media (max-width: 640px) {
+        #portfolio .pf-img-wrap { height: 200px; }
+      }
     </style>
     <section id="portfolio">
-      <div class="sc-container">
-        <span class="sc-label" data-i18n="showcase_label">Portfolio</span>
-        <h2 class="sc-title" data-i18n="showcase_title">See the Difference</h2>
-        <p class="sc-subtitle" data-i18n="showcase_subtitle">Real results from real businesses.</p>
-        <div class="sc-grid">
-          <!-- Showcase 1: Joe's Plumbing -->
-          <div class="sc-card">
-            <div class="sc-compare">
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-before">Before</span>
-                <img src="images/before_joes_plumbing.png" alt="Joe's Plumbing old website" loading="lazy">
-              </div>
-              <div class="sc-divider">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-after">After</span>
-                <img src="images/after_joes_plumbing.png" alt="Joe's Plumbing new website" loading="lazy">
-              </div>
+      <div class="pf-header">
+        <span class="pf-label" data-i18n="showcase_label">Portfolio</span>
+        <h2 class="pf-title" data-i18n="showcase_title">See the Difference</h2>
+        <p class="pf-subtitle" data-i18n="showcase_subtitle">Real results from real businesses.</p>
+      </div>
+      <div class="pf-grid">
+        <!-- Card 1: Joe's Plumbing -->
+        <div class="pf-card">
+          <div class="pf-images">
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-before">BEFORE</span>
+              <img src="images/before_joes_plumbing.png" alt="Joe's Plumbing before redesign" loading="lazy">
             </div>
-            <div class="sc-info">
-              <h3 data-i18n="showcase_case1_name">Joe's Plumbing</h3>
-              <span class="sc-info-type" data-i18n="showcase_case1_type">Plumber in Dallas, TX</span>
-              <p class="sc-info-result" data-i18n="showcase_case1_result">Calls increased 340% in 60 days</p>
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-after">AFTER</span>
+              <img src="images/after_joes_plumbing.png" alt="Joe's Plumbing after redesign" loading="lazy">
             </div>
           </div>
-          <!-- Showcase 2: Smile Dental -->
-          <div class="sc-card">
-            <div class="sc-compare">
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-before">Before</span>
-                <img src="images/before_smile_dental.png" alt="Smile Dental old website" loading="lazy">
-              </div>
-              <div class="sc-divider">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-after">After</span>
-                <img src="images/after_smile_dental.png" alt="Smile Dental new website" loading="lazy">
-              </div>
+          <div class="pf-info">
+            <h3 data-i18n="showcase_case1_name">Joe's Plumbing</h3>
+            <p class="pf-location" data-i18n="showcase_case1_type">Plumber in Dallas, TX</p>
+            <p class="pf-stat" data-i18n="showcase_case1_result">Calls increased 340% in 60 days</p>
+          </div>
+        </div>
+        <!-- Card 2: Smile Dental -->
+        <div class="pf-card">
+          <div class="pf-images">
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-before">BEFORE</span>
+              <img src="images/before_smile_dental.png" alt="Smile Dental before redesign" loading="lazy">
             </div>
-            <div class="sc-info">
-              <h3 data-i18n="showcase_case2_name">Smile Dental</h3>
-              <span class="sc-info-type" data-i18n="showcase_case2_type">Dentist in Phoenix, AZ</span>
-              <p class="sc-info-result" data-i18n="showcase_case2_result">Online bookings up 280%</p>
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-after">AFTER</span>
+              <img src="images/after_smile_dental.png" alt="Smile Dental after redesign" loading="lazy">
             </div>
           </div>
-          <!-- Showcase 3: Elite HVAC -->
-          <div class="sc-card">
-            <div class="sc-compare">
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-before">Before</span>
-                <img src="images/before_elite_hvac.png" alt="Elite HVAC old website" loading="lazy">
-              </div>
-              <div class="sc-divider">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-after">After</span>
-                <img src="images/after_elite_hvac.png" alt="Elite HVAC new website" loading="lazy">
-              </div>
+          <div class="pf-info">
+            <h3 data-i18n="showcase_case2_name">Smile Dental</h3>
+            <p class="pf-location" data-i18n="showcase_case2_type">Dentist in Phoenix, AZ</p>
+            <p class="pf-stat" data-i18n="showcase_case2_result">Online bookings up 280%</p>
+          </div>
+        </div>
+        <!-- Card 3: Elite HVAC -->
+        <div class="pf-card">
+          <div class="pf-images">
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-before">BEFORE</span>
+              <img src="images/before_elite_hvac.png" alt="Elite HVAC before redesign" loading="lazy">
             </div>
-            <div class="sc-info">
-              <h3 data-i18n="showcase_case3_name">Elite HVAC</h3>
-              <span class="sc-info-type" data-i18n="showcase_case3_type">HVAC in Nashville, TN</span>
-              <p class="sc-info-result" data-i18n="showcase_case3_result">Revenue doubled in 3 months</p>
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-after">AFTER</span>
+              <img src="images/after_elite_hvac.png" alt="Elite HVAC after redesign" loading="lazy">
             </div>
           </div>
-          <!-- Showcase 4: Rosa's Cleaning -->
-          <div class="sc-card">
-            <div class="sc-compare">
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-before">Before</span>
-                <img src="images/before_rosas_cleaning.png" alt="Rosa's Cleaning old website" loading="lazy">
-              </div>
-              <div class="sc-divider">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-              <div class="sc-side">
-                <span class="sc-badge sc-badge-after">After</span>
-                <img src="images/after_rosas_cleaning.png" alt="Rosa's Cleaning new website" loading="lazy">
-              </div>
+          <div class="pf-info">
+            <h3 data-i18n="showcase_case3_name">Elite HVAC</h3>
+            <p class="pf-location" data-i18n="showcase_case3_type">HVAC in Nashville, TN</p>
+            <p class="pf-stat" data-i18n="showcase_case3_result">Revenue doubled in 3 months</p>
+          </div>
+        </div>
+        <!-- Card 4: Rosa's Cleaning -->
+        <div class="pf-card">
+          <div class="pf-images">
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-before">BEFORE</span>
+              <img src="images/before_rosas_cleaning.png" alt="Rosa's Cleaning before redesign" loading="lazy">
             </div>
-            <div class="sc-info">
-              <h3 data-i18n="showcase_case4_name">Rosa's Cleaning</h3>
-              <span class="sc-info-type" data-i18n="showcase_case4_type">Cleaning Service in Houston, TX</span>
-              <p class="sc-info-result" data-i18n="showcase_case4_result">Now books 15+ jobs/week online</p>
+            <div class="pf-img-wrap">
+              <span class="pf-label-tag pf-after">AFTER</span>
+              <img src="images/after_rosas_cleaning.png" alt="Rosa's Cleaning after redesign" loading="lazy">
             </div>
+          </div>
+          <div class="pf-info">
+            <h3 data-i18n="showcase_case4_name">Rosa's Cleaning</h3>
+            <p class="pf-location" data-i18n="showcase_case4_type">Cleaning Service in Houston, TX</p>
+            <p class="pf-stat" data-i18n="showcase_case4_result">Now books 15+ jobs/week online</p>
           </div>
         </div>
       </div>
